@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear/Editar Usuario</title>
+</head>
+<body>
+    <h1>Crear/Editar Usuario</h1>
+    <form th:action="@{/categorias_view}" method="post" th:object="${categoria}">
+        <input type="hidden" th:field="*{id}">
+        <label for="descripcion">Descripcion:</label>
+        <input type="text" th:field="*{descripcion}">
+        <br>
+        <button type="submit">Guardar</button>
+        <a th:href="@{/categorias_view/listar}">Cancelar</a>
+    </form>
+</body>
+</html>

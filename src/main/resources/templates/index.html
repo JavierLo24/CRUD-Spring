@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Prueba hoja tomillo</title>
+</head>
+<body>
+<h1>Listado Categorias</h1>
+
+<table>
+<thead>
+<tr>
+<td>Id</td><td>Descripcion</td><td>Acciones</td>
+</tr>
+</thead>
+<tbody>
+<tr th:each="categoria: ${categorias}">
+<td th:text="${categoria.id}"></td>
+<td th:text="${categoria.descripcion}"></td>
+<td><a th:href="@{/categorias_view/{id}/edit(id=${categoria.id})}">Editar</a></td>
+<td><a th:href="@{/categorias_view/{id}/delete(id=${categoria.id})}">Eliminar</a></td>			
+</tr>
+</tbody>
+</table>
+<br>
+<a th:href="@{/categorias_view/new}">Crear nuevo usuario</a>
+</body>
+</html>
